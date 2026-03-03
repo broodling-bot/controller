@@ -70,6 +70,7 @@ import { PurchaseStarterpack } from "./purchasenew/starterpack/starterpack";
 import { Quests } from "./quests";
 import { QuestClaim } from "./quests/claim";
 import { CoinbasePopup } from "./coinbase-popup";
+import { PopupAuth } from "./PopupAuth";
 
 function DefaultRoute() {
   const account = useAccount();
@@ -235,6 +236,7 @@ export function App() {
     <Routes>
       <Route path="/booster-pack/:privateKey" element={<BoosterPack />} />
       <Route path="/coinbase" element={<CoinbasePopup />} />
+      <Route path="/popup-auth" element={<PopupAuth />} />
       <Route path="/" element={<Authentication />}>
         <Route index element={<DefaultRoute />} />
         <Route path="/settings" element={<Settings />} />

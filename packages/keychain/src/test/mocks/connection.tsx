@@ -39,6 +39,7 @@ export const defaultMockConnection: ConnectionContextValue = {
     cover: "test-cover",
   },
   propagateError: false,
+  forcePopup: false,
   setController: vi.fn(),
   setRpcUrl: vi.fn(),
   openSettings: vi.fn(),

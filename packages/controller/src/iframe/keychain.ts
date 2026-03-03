@@ -40,6 +40,7 @@ export class KeychainIFrame extends IFrame<Keychain> {
     encryptedBlob,
     propagateSessionErrors,
     errorDisplayMode,
+    forcePopup,
     ...iframeOptions
   }: KeychainIframeOptions) {
     let onStarterpackPlayHandler: (() => Promise<void>) | undefined;
@@ -99,6 +100,10 @@ export class KeychainIFrame extends IFrame<Keychain> {
 
     if (shouldOverridePresetPolicies) {
       _url.searchParams.set("should_override_preset_policies", "true");
+    }
+
+    if (forcePopup) {
+      _url.searchParams.set("force_popup", "true");
     }
 
     // Policy precedence logic:

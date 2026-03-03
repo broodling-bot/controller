@@ -22,6 +22,7 @@ export type ConnectionContextValue = {
   project: string | null;
   namespace: string | null;
   propagateError: boolean;
+  forcePopup: boolean;
   tokens?: string[];
   policies?: ParsedSessionPolicies;
   theme: VerifiableControllerTheme;

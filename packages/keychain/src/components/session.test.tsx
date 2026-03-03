@@ -65,6 +65,7 @@ describe("Session", () => {
       project: null,
       namespace: null,
       propagateError: false,
+      forcePopup: false,
       tokens: [],
       policies: {
         verified: true,

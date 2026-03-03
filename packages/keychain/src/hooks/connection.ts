@@ -305,6 +305,7 @@ export function useConnectionValue() {
     refGroup: string | null;
     propagateError: boolean;
     errorDisplayMode?: "modal" | "notification" | "silent";
+    forcePopup: boolean;
   }>();
 
   const urlParams = useMemo(() => {
@@ -323,6 +324,7 @@ export function useConnectionValue() {
     const ref = urlParams.get("ref");
     const refGroup = urlParams.get("ref_group");
     const propagateError = urlParams.get("propagate_error") === "true";
+    const forcePopup = urlParams.get("force_popup") === "true";
     const errorDisplayMode = urlParams.get("error_display_mode") as
       | "modal"
       | "notification"
@@ -366,6 +368,7 @@ export function useConnectionValue() {
         propagateError || urlParamsRef.current?.propagateError || false,
       errorDisplayMode:
         errorDisplayMode || urlParamsRef.current?.errorDisplayMode || undefined,
+      forcePopup: forcePopup || urlParamsRef.current?.forcePopup || false,
     };
 
     // Store the new params for future reference
@@ -892,6 +895,7 @@ export function useConnectionValue() {
     namespace: urlParams.namespace,
     tokens: urlParams.tokens,
     propagateError: urlParams.propagateError,
+    forcePopup: urlParams.forcePopup,
     isConfigLoading,
     isPoliciesResolved,
     isMainnet,
