@@ -11,7 +11,7 @@ import {
 } from "@/utils/connection/session-creation";
 
 /**
- * Standalone popup page rendered at /popup-auth.
+ * Standalone popup page rendered at /auth.
  * Opened by the keychain iframe when `forcePopup` mode is active.
  *
  * - action=connect: Full signup/login flow + session creation

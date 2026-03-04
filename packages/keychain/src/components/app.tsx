@@ -236,7 +236,7 @@ export function App() {
     <Routes>
       <Route path="/booster-pack/:privateKey" element={<BoosterPack />} />
       <Route path="/coinbase" element={<CoinbasePopup />} />
-      <Route path="/popup-auth" element={<PopupAuth />} />
+      <Route path="/auth" element={<PopupAuth />} />
       <Route path="/" element={<Authentication />}>
         <Route index element={<DefaultRoute />} />
         <Route path="/settings" element={<Settings />} />

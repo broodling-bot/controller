@@ -32,7 +32,7 @@ export function openPopupAuth(
   const channelId = crypto.randomUUID();
   const channel = new BroadcastChannel(`popup-auth-${channelId}`);
 
-  const url = new URL(`${window.location.origin}/popup-auth`);
+  const url = new URL(`${window.location.origin}/auth`);
   url.searchParams.set("channel_id", channelId);
   url.searchParams.set("action", options.action);
 
