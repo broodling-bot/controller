@@ -309,8 +309,10 @@ export default class ControllerProvider extends BaseProvider {
         return this.account;
       }
 
-      // Only open modal if NOT headless
-      this.iframes.keychain.open();
+      // Only open modal if NOT headless and NOT forcePopup (popup handles its own UI)
+      if (!this.options.forcePopup) {
+        this.iframes.keychain.open();
+      }
 
       // Use connect() parameter if provided, otherwise fall back to constructor options
       const effectiveOptions = Array.isArray(options)
@@ -353,8 +355,8 @@ export default class ControllerProvider extends BaseProvider {
       }
       console.log(e);
     } finally {
-      // Only close modal if it was opened (not headless)
-      if (!headless) {
+      // Only close modal if it was opened (not headless and not forcePopup)
+      if (!headless && !this.options.forcePopup) {
         this.iframes.keychain.close();
       }
     }
